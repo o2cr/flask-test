@@ -8,15 +8,7 @@ version:
 install:
   - pip install -r requirements.txt
   - pip install coverage
+  - echo "boops"
 
 script: true
-  - nosetests --with-coverage --coverage report
-
-script:
-  - pytest
-
-after_script:
-  - coveralls
-
-after_success:
-  - codecov
+  - echo 'test' 
