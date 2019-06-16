@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required
 from .models import User
 from . import db
+from re import match
 
 auth = Blueprint('auth', __name__)
 
@@ -40,6 +41,15 @@ def signup_post():
     email = request.form.get('email')
     name = request.form.get('name')
     password = request.form.get('password')
+
+    if not name: #Check if name is empty
+        flash('Name is empty')
+        return redirect(url_for('auth.signup'))
+
+
+    elif bool(re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$", password)) == False:
+        flash('Password must have at least')
+        return redirect(url_for('auth.signup'))
 
     user = User.query.filter_by(email=email).first() # if this returns a user, then the email already exists in database
 

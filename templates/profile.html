@@ -5,5 +5,23 @@
 {% block content %}
 <h1 class="title">
   Welcome, {{ name }}!
+  {% if current_user.name == 'John Wick'%}
+  <h2 class="subtitle">This is actually a secret page for some users. Feel free to download stuff below:</h2>
+  <div class="content columns">
+  <table class="table is-narrow ">
+    <thead>Warning: Do not share any of the files outside</thead>
+    <tbody>
+      <tr>
+        <th>Name</th>
+        <th>Link</th>
+      </tr>
+      <tr>
+        <th>Shigohaji</th>
+        <th><a class='button is-link' href='http://thefactthat.kitakamirei.ca/Shigohaji.mkv'>Download</a></th>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+  {% endif %}
 </h1>
 {% endblock %}

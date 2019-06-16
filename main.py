@@ -12,4 +12,7 @@ def index():
 @main.route('/profile')
 @login_required
 def profile():
-    return render_template('profile.html', name=current_user.name)
+    if current_user.name != 'John Wick':
+        return render_template('profile.html', name=current_user.name)
+    else:
+        return render_template('profile.html', name='Oh shit it\'s John Wick')
