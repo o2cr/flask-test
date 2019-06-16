@@ -46,7 +46,7 @@ def signup_post():
         return redirect(url_for('auth.signup'))
 
 
-    elif bool(re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$", password)):
+    if not bool(re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$", password)):
         flash('Password must have at least 8 characters, contains at least 1 of lowercase, uppercase, number and special characters')
         return redirect(url_for('auth.signup'))
 
