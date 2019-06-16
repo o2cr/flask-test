@@ -5,8 +5,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required
 from .models import User
 from . import db
-from re import match
-
+import re
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
@@ -47,8 +46,8 @@ def signup_post():
         return redirect(url_for('auth.signup'))
 
 
-    elif bool(re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$", password)) == False:
-        flash('Password must have at least')
+    elif bool(re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$", password)):
+        flash('Password must have at least 8 characters, contains at least 1 of lowercase, uppercase, number and special characters')
         return redirect(url_for('auth.signup'))
 
     user = User.query.filter_by(email=email).first() # if this returns a user, then the email already exists in database
