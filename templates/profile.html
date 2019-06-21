@@ -5,7 +5,7 @@
 {% block content %}
 <h1 class="title">
   Welcome, {{ name }}!
-  {% if current_user.name == 'John Wick'%}
+  {% if current_user.download == '1'%}
   <h2 class="subtitle">This is actually a secret page for some users. Feel free to download stuff below:</h2>
   <div class="content column is-4 is-offset-4">
   <table class="table is-narrow is-hoverable is-borderless">
