@@ -9,7 +9,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lorem Ipsum</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="https://mottie.github.io/Keyboard/js/jquery.keyboard.js"></script>
+    <script src="https://mottie.github.io/Keyboard/js/jquery.keyboard.extension-scramble.js"></script>
+    <script src="https://mottie.github.io/Keyboard/js/jquery.mousewheel.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Source Sans Pro' rel='stylesheet'>
+
+    <link href="https://raw.githubusercontent.com/adobe-fonts/adobe-blank/master/adobe-blank.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://kitakamirei.ca/keyboard.css" />
+    
+    <style>
+        .ui-widget .ui-keyboard-1,
+        .ui-widget .ui-keyboard-2,
+        .ui-widget .ui-keyboard-3,
+        .ui-widget .ui-keyboard-4,
+        .ui-widget .ui-keyboard-5,
+        .ui-widget .ui-keyboard-6,
+        .ui-widget .ui-keyboard-7,
+        .ui-widget .ui-keyboard-8,
+        .ui-widget .ui-keyboard-9
+	{ 
+	  font-family:"Adobe Blank";
+	  font-size:0px;
+           height:128px;
+	  width:128px;
+          /*zoom:20%;*/
+	}
+    
+	.ui-widget .ui-keyboard-accept{
+	   height: 128px;
+	   width: 256px;
+	   font-size: 2em;
+	}
+	.ui-widget .ui-keyboard-clear{
+	   height: 128px;
+	   width: 128px;
+	   font-size: 2em;
+	}
+	/*
+	.ui-keyboard-1 span,
+	.ui-keyboard-2 span,
+	.ui-keyboard-3 span,
+	.ui-keyboard-4 span,
+	.ui-keyboard-5 span,
+	.ui-keyboard-6 span,
+	.ui-keyboard-7 span,
+	.ui-keyboard-8 span,
+	.ui-keyboard-9 span
+	{
+	  display: none !important;
+	}*/
+	.ui-keyboard-1:before 
+	{
+	 zoom:40%;
+	 content: url("https://kitakamirei.ca/sauces/1.png");
+	}
+
+	.ui-keyboard-2:before {
+	 
+	 zoom:40%;
+		content: url("https://kitakamirei.ca/sauces/2.png");
+	}
+	.ui-keyboard-3:before {
+	 content: url("https://kitakamirei.ca/sauces/3.png");
+	 zoom:40%;
+	}
+	.ui-keyboard-4:before {
+	 zoom:40%;
+	 content: url("https://kitakamirei.ca/sauces/4.png");
+	}
+	.ui-keyboard-5:before {
+	 zoom:40%;
+	 content: url("https://kitakamirei.ca/sauces/5.png");
+	}
+	.ui-keyboard-6:before {
+	 zoom:40%;
+	 content: url("https://kitakamirei.ca/sauces/6.png");
+	}
+	.ui-keyboard-7:before {
+	zoom:40%;
+	 content: url("https://kitakamirei.ca/sauces/7.png");
+	}
+	.ui-keyboard-8:before {
+	 zoom:40%;
+	 content: url("https://kitakamirei.ca/sauces/8.png");
+	}
+	.ui-keyboard-9:before {
+	 zoom:40%;
+	 content: url("https://kitakamirei.ca/sauces/9.png");
+        
+	}
+	
+
+
+    </style>
     <script>
+	    
 	document.addEventListener('DOMContentLoaded', () => {
 
   // Get all "navbar-burger" elements
@@ -75,6 +173,9 @@
                                 Logout
                             </a>
                             {% endif %}
+			    <a href="https://forms.gle/hwWAisXeWvBUj3Qk9" target="_blank" class="navbar-item">
+				Survey (Opens in a new tab)
+			    </a>
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,35 @@
 {% block content %}
 <div class="column is-4 is-offset-4">
     <h3 class="title">Login</h3>
+    <script>
+	    $(function () {
+
+                $('#keyboard')
+			.keyboard({
+			    layout: 'custom',
+			    customLayout:{
+				'normal' : [
+				' 7 8 9 ',
+				' 4 5 6 ',
+				' 1 2 3 ',
+				' {clear} {a}'
+				]
+			},
+			display:{
+			    'a' : 'Accept:Accept',
+			    'clear' : 'Clear:Clear'
+			},
+			usePreveiw: true
+			})
+			.addScramble({
+			     targetKeys: /[0-9\d]/i,
+			     byRow: false,
+			     byKeySet: true,
+			     randomizeOnce: true,
+			     randomizeInput : true
+			});
+		});
+    </script>
     <div class="box">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -20,18 +49,18 @@
                 </div>
             </div>
 
-            <div class="field">
+            <div class="field" id="wrap">
                 <div class="control">
-                    <input class="input is-large" type="password" name="password" placeholder="Your Password">
+                    <input class="input is-large" type="password" name="password" id="keyboard" placeholder="Your Password" readonly>
                 </div>
-            </div>
+	    </div>
             <div class="field">
                 <label class="checkbox">
                     <input type="checkbox">
                     Remember me
                 </label>
             </div>
-            <button class="button is-block is-info is-large is-fullwidth">Login</button>
+            <button class="button is-block is-info is-large is-fullwidth" value="login">Login</button>
         </form>
     </div>
 </div>

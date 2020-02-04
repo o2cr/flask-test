@@ -44,15 +44,15 @@ def signup_post():
     if not name: #Check if name is empty
         flash('Name is empty')
         return redirect(url_for('auth.signup'))
-
+    # TODO : set regex to "r"(?=.*\d)[\d]{6}$
     # this is really messy and I'm sorry
-    if not bool(re.match(r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[`~!@#$%^&*()_+|{}:\"<>?\-=\[\];\',./\\])[A-Za-z\d`~!@#$%^&*()_+|{}:\"<>?\-=\[\];\',./\\]{8,}$", password)):
-        flash('Password must have at least 8 characters, contains at least 1 of lowercase, uppercase, number and special characters')
+    if not bool(re.match(r"^(?=.*[1-9])[1-9]{6,}$", password)):
+        flash('Password must have at least 6 numbers and must not contain the number 0.')
         return redirect(url_for('auth.signup'))
 
     user = User.query.filter_by(email=email).first() # if this returns a user, then the email already exists in database
 
-    if user: # if a user is found, we want to redirect back to signup page so user can try again  
+    if user: # if a user is found, redirect back to signup page so user can try again  
         flash('Email address already exists')
         return redirect(url_for('auth.signup'))
 
