@@ -1,14 +1,16 @@
 language: python
 
 version:
-  - "2.7"
   - "3.6"
   - "3.7"
 
+services: sqlite3
 install:
   - pip install -r requirements.txt
-  - pip install coverage
-  - echo "boops"
+
+before_script:
+  - export FLASK_APP="$TRAVIS_BUILD_DIR/flask-test"
+  - export FLASK_DEBUG=1
 
 script: 
-  - echo 'test' 
+  - python setup.py
