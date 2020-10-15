@@ -18,4 +18,4 @@ export FLASK_APP=flask_test
 ```bash
 flask run
 ```
-5. Use the `shuffle.sh` script to superimpose the images again. You can use a cronjob if you want to schedule it every `x $time`
+5. Use the `shuffle.sh` script to superimpose the images again. You can use a cronjob if you want to schedule it every `x $time`. You need to install ImageMagick as well.
