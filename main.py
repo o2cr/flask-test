@@ -7,7 +7,8 @@ main = Blueprint('main', __name__)
 
 @main.route('/')
 def index():
-    return render_template('index.html')
+    image_names = os.listdir('conv')
+    return render_template('index.html', image_name=image_names)
 
 @main.route('/profile')
 @login_required
