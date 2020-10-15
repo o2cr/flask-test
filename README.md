@@ -14,7 +14,7 @@ pip install -r requirements.txt
 ```bash
 export FLASK_APP=flask_test
 ```
-4. Run. If all goes well it should run at `http://localhost:3000`. Use a reverse proxy if you want to use Nginx or something.
+4. Run while in your home folder. If all goes well it should run at `http://localhost:3000`. Use a reverse proxy if you want to use Nginx or something.
 ```bash
 flask run
 ```
